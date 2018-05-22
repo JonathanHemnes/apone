@@ -26,15 +26,15 @@ apone.register({
 app.listen(3000)
 ```
 
-# table of contents
-- [api](#api)
-- [routes](#routes)
-- [schemas](#schemas)
-- [validationResults](#validationresult)
-- [extensions](#extensions)
-- [route-behavior](#route-behavior)
-- [contributing](#contributing)
-- [faq](#faq)
+# Table of Contents
+- [API](#api)
+- [Routes](#routes)
+- [Rchemas](#schemas)
+- [ValidationResult](#validationresult)
+- [Extensions](#extensions)
+- [Route Behavior](#route-behavior)
+- [Contributing](#contributing)
+- [FAQ](#faq)
 
 # API
 
@@ -65,7 +65,7 @@ By defining the following properties, routes opt-into different behaviors. Each 
   - `prefix` - `string` path prefix which takes priority over Apone's [constructor option](#api) global prefix
   - `metadata` - `object` - flexible bucket for anything else
 
-### example:
+### Example:
 
 ```js
   let route = {
@@ -108,7 +108,7 @@ Schemas are used to validate user requests. [Joi](https://github.com/hapijs/joi)
 ## Properties
   - `validate` - `function` which must return a [ValidationResult](#validationresult)
 
-### example:
+### Example:
 ```js
   let schema = {
     validate: (body) => {
@@ -129,7 +129,7 @@ Returned by [schema](#schemas) validation
   - `error` - `Error` object
   - `value` - `any` coerced and sanitized result
 
-### example:
+### Example:
 
 ```js
   let validationResult = {
@@ -148,7 +148,7 @@ Extensions are custom [route properties](#routes). They must be defined in the A
   - `type` - `string` defaults to `pre`, or optionally `post`.
 
 
-### example:
+### Example:
 The following extension adds a traceId to each request prior to validation. First, Apone is instantiated with the `trace` extension. During registration, `trace(true)` is called and the return function is added to the stack. Extensions execute in order, by type.
 
 ```js
